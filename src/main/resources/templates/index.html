@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+
+      lang="en">
+  <head>
+    <title>Code Sharing Platform</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" th:href="@{'/style.css'}" href="../static/style.css">
+    <link rel="stylesheet" th:href="@{'/bootstrap.min.css'}" href="../static/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{'/icons/bootstrap-icons.css'}" href="../static/icons/bootstrap-icons.css">
+  </head>
+  <tbody>
+      
+    <main>
+      <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom">
+          <a href="/" class="d-flex align-items-center text-primary text-decoration-none">
+            <span class="fs-4">Code Sharing Platform</span>
+          </a>
+        </header>
+
+        <div class="p-5 mb-4 text-light bg-dark rounded-3">
+          <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold text-white">Share your snippet</h1>
+            <p class="col-md-8 fs-4">The <em>Code Sharing Platform</em> gives you a quick and convenient way to share, review and vote code snippets. While the UI is clean and mobile-friendly, the core is robust and secure.</p>
+            <a th:href="@{'/code/new'}" href="./createSnippet.html" class="btn btn-primary btn-lg" type="button" title="Create a snippet">Create a snippet</a>
+          </div>
+        </div>
+
+        <div class="p-5 mb-4 text-light bg-dark rounded-3">
+          <div class="container-fluid py-5">
+            <div class="h-100 p-5 text-light bg-dark rounded-3">
+              <h1 class="display-5 fw-bold text-white">Latest snippets</h1>
+              <p class="col-md-8 fs-4">Are you interested in the most recent code snippets? All you need is the smell of the oven-fresh scripts? Then give a look to the <em>Latest snippets</em> section.</p>
+              <a th:href="@{'/code/latest'}" href="./latestSnippets.html" class="btn btn-primary btn-lg" type="button" title="Go to Latest snippets">Latest snippets</a>
+            </div>
+          </div>
+
+        </div>
+
+        <footer class="pt-3 mt-4 text-muted border-top">
+          &copy; 2021
+        </footer>
+      </div>
+    </main>
+  </tbody>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+  <head>
+    <title>Snippet | Code Sharing Platform</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" th:href="@{'/style.css'}" href="../static/style.css">
+    <link rel="stylesheet" th:href="@{'/bootstrap.min.css'}" href="../static/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{'/icons/bootstrap-icons.css'}" href="../static/icons/bootstrap-icons.css">
+    <link rel="stylesheet" th:href="@{'/highlight-styles/kimbie-dark.min.css'}" href="../static/highlight-styles/kimbie-dark.min.css">
+    
+    <script th:src="@{'/highlight.min.js'}" src="../static/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+  </head>
+  <body>
+    <div class="container-lg">
+      <div class="row">
+        <div class="col-1"></div>
+
+        <div class="col-10 snippets">
+          <div class="snippet" id="snippet_0">
+            <div class="snippetHeader">
+              <div class="snippetInfo" th:replace="thymeleafTemplates :: snippetInfoButton ( ${snippet}, 0)">
+                <button type="button" class="btn btn-dark dropdown-toggle" id="infoDropdownButton"  data-bs-toggle="dropdown" aria-expanded="false" title="Show code snippet info">
+                  <i class="bi bi-info-lg"></i>
+                </button>
+
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="infoDropdownButton">
+
+                  <li>
+                    <h6 class="dropdown-header">
+                      Statistics
+                    </h6>
+                  </li>
+
+                  <li>
+                    <button type="button" class="dropdown-item text-secondary font-monospace" title="Views: 237">
+                      <i class="bi bi-eye-fill"></i> 237
+                    </button>
+                  </li>
+
+                  <li>
+                    <button type="button" class="dropdown-item text-secondary font-monospace" title="Posted: 2020/02/02 20:20:20">
+                      <i class="bi bi-calendar3"></i> 2020/02/02 20:20:20
+                    </button>
+                  </li>
+
+
+                  <li>
+                    <hr class="dropdown-divider">
+                    <h6 class="dropdown-header">
+                      Limits
+                    </h6>
+                  </li>
+
+                  <li>
+                    <button type="button" class="dropdown-item text-danger font-monospace" title="View limit: 300">
+                      <i class="bi bi-eye-slash-fill"></i> 300
+                    </button>
+                  </li>
+
+                  <li>
+                    <button type="button" class="dropdown-item text-danger font-monospace" title="Expiry: 2020/02/02 22:22:22">
+                      <i class="bi bi-calendar-x"></i> 2020/02/02 22:22:22
+                    </button>
+                  </li>
+                </ul>
+              </div>
+
+
+              <div class="snippetAction" th:replace="thymeleafTemplates :: snippetActionButtons ( ${snippet}, 0)">
+                <button type="button" class="btn btn-dark dropdown-toggle" id="actionDropdownButton"  data-bs-toggle="dropdown" aria-expanded="false" title="Show code snippet actions">
+                  <i class="bi bi-three-dots"></i>
+                </button>
+
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="actionDropdownButton">
+                  <li>
+                    <button type="button" class="dropdown-item text-primary" title="Copy link">
+                      <i class="bi bi-link-45deg"></i>
+                    </button>
+                  </li>
+
+                  <li>
+                    <button type="button" class="dropdown-item text-primary" title="Copy to clipboard">
+                      <i class="bi bi-clipboard"></i>
+                    </button>
+                  </li>
+
+                  <li>
+                    <button type="button" class="dropdown-item text-primary" title="Show comments">
+                      <i class="bi bi-chat-text"></i>
+                    </button>
+                  </li>
+
+                  <li>
+                    <button type="button" class="dropdown-item text-success" title="Upvote">
+                      <i class="bi bi-caret-up-fill"></i>
+                    </button>
+                  </li>
+
+                  <li>
+                    <button type="button" class="dropdown-item text-danger" title="Downvote">
+                      <i class="bi bi-caret-down-fill"></i>
+                    </button>
+                  </li>
+
+                  <li>
+                    <button type="button" class="dropdown-item text-warning" title="Report a bug">
+                      <i class="bi bi-bug-fill"></i>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <pre id="code_snippet_0"><code th:text="${snippet.code}">public static void main(String... args) {
+      System.out.println(&quot;hu-zza!&quot;);
+      }</code></pre>
+
+          </div>
+        </div>
+
+        <div class="col-1"></div>
+      </div>
+    </div>
+      
+    <script th:src="@{'/bootstrap.bundle.min.js'}" src="../static/bootstrap.bundle.min.js"></script>
+    <script th:src="@{'/scripts.js'}" src="../static/scripts.js"></script>
+  </body>
+</html>

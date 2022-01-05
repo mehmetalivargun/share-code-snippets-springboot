@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>Something went wrong!</title>
+  </head>
+  <body>
+    Something went wrong! :-/
+
+    <div th:utext="'&lt;!--'" th:remove="tag"></div>
+    <div th:utext="'Failed URL: ' +  ${url}" th:remove="tag">${url}</div>
+    <div th:if="${exception}">
+      <div th:utext="'Exception: ' + ${exception.message}" th:remove="tag">${exception.message}</div>
+      <ul th:remove="tag">
+        <li th:each="ste : ${exception.stackTrace}" th:remove="tag"><span
+            th:utext="${ste}" th:remove="tag">${ste}</span></li>
+      </ul>
+    </div>
+    <div th:utext="'--&gt;'" th:remove="tag"></div>
+  </body>
+</html>
